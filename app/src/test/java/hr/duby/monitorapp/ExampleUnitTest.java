@@ -1,4 +1,4 @@
-package hr.duby.monitorandroid;
+package hr.duby.monitorapp;
 
 import org.junit.Test;
 

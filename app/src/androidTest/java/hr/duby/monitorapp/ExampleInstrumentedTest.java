@@ -1,4 +1,4 @@
-package hr.duby.monitorandroid;
+package hr.duby.monitorapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

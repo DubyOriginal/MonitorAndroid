@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1097199677094",
+    "firebase_url": "https://api-project-1097199677094.firebaseio.com",
+    "project_id": "api-project-1097199677094",
+    "storage_bucket": "api-project-1097199677094.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097199677094:android:6a89cc5a66032c2e",
+        "android_client_info": {
+          "package_name": "hr.duby.monitorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097199677094-79qbf98p0nufjibk40uonlv9mgd8bso3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hr.duby.monitorapp",
+            "certificate_hash": "52ba346b1f362573f9b6b83fc3146d90369a2218"
+          }
+        },
+        {
+          "client_id": "1097199677094-1jgug0uf90npm8k4cvrl9q0s42h5sffo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe7980U4ewkA0VYm47705TIPxpxWu69Aw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097199677094-1jgug0uf90npm8k4cvrl9q0s42h5sffo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
