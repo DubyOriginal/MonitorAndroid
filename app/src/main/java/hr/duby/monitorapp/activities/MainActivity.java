@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         DLog("onCreate");
 
-        gotoWebBrowserActivity("http://" + Const.SERVICE_URL);
+        gotoWebBrowserActivity(Const.SERVICE_URL);
     }
 
     private void gotoWebBrowserActivity(String linkUrl) {
