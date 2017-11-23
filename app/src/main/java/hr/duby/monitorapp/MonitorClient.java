@@ -10,12 +10,19 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import hr.duby.monitorapp.activities.HomeActivity;
+import hr.duby.monitorapp.data.SensorBean;
 import hr.duby.monitorapp.network.AsyncHttpClient;
 import hr.duby.monitorapp.network.AsyncHttpListener;
+import hr.duby.monitorapp.network.AsyncHttpListenerArray;
+import hr.duby.monitorapp.utils.JSONHelper;
 
 /**
  * Created by Duby on 10.11.2017..
@@ -34,6 +41,12 @@ public class MonitorClient {
             }
         }
         return _this;
+    }
+
+    //interface listeners
+    //**********************************************************************************************
+    public interface OnGetBasementList {
+        void onGetBasementList(List<SensorBean> basementList);
     }
 
     //**********************************************************************************************
@@ -74,6 +87,65 @@ public class MonitorClient {
                 }
             });
         }
+    }
+
+    public void request_GET_BASEMENT_LIST(final OnGetBasementList listener){
+        new AsyncHttpClient().get(Const.GET_BASEMENT_SENSOR_DATA, new AsyncHttpListenerArray() {
+            @Override
+            public void onGetArrayDone(JSONArray dataArr) {
+                if (dataArr != null){
+                    DLog("request_GET_BASEMENT_LIST: onGetArrayDone -> " + dataArr);
+                    List<SensorBean> sensorBasementList = prepareBasementSensorData(dataArr);
+                    if (listener != null){
+                        listener.onGetBasementList(sensorBasementList);
+                    }
+                } else{
+                    DLog("request_GET_BASEMENT_LIST: onGetArrayDone -> NULL object");
+                }
+            }
+
+            @Override
+            public void onGetDone(JSONObject object) {}
+
+            @Override
+            public void onPostDone(JSONObject object) {}
+
+            @Override
+            public void onError(Exception e) {
+                DLog("request_GET_BASEMENT_LIST: onError: " + e.toString());
+            }
+        });
+    }
+
+
+    private List<SensorBean> prepareBasementSensorData(JSONArray dataArr) {
+        if (dataArr == null) {
+            return null;
+        }
+        SensorBean sensorBean;
+        List<SensorBean> resultList = new ArrayList<>();
+
+        for (int i = 0; i < dataArr.length(); i++) {
+            JSONObject sensorJson = null;
+            try {
+                sensorJson = dataArr.getJSONObject(i);
+                if (sensorJson != null){
+                    sensorBean = new SensorBean();
+                    sensorBean.setSensorID(sensorJson.optString("sensor_id"));
+                    sensorBean.setSensorReadTS(sensorJson.optString("rtimestamp"));
+                    sensorBean.setScreenID(sensorJson.optInt("screen_id"));
+                    sensorBean.setSensorType(sensorJson.optString("sensor_type"));
+                    sensorBean.setSensorValue(sensorJson.optString("sensor_mid"));
+                    sensorBean.setSensorName(sensorJson.optString("sensor_name"));
+                    sensorBean.setSensorValue(sensorJson.optString("sensor_value"));
+                    resultList.add(sensorBean);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return resultList;
     }
 
 

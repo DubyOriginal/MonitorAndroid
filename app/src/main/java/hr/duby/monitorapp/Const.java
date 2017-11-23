@@ -6,9 +6,10 @@ package hr.duby.monitorapp;
 
 public class Const {
 
-    //public static final String SERVICE_URL = "http://duby.ddns.net:2200";
-    public static final String SERVICE_URL = "http://192.168.1.24:2200";            //debug mode -> local-servis
+    public static final String SERVICE_URL = "http://duby.ddns.net:2200";
+    //public static final String SERVICE_URL = "http://192.168.1.24:2200";            //debug mode -> local-servis
     public static final String FCM_REGISTER_URL = SERVICE_URL + "/updatepushtoken";
+    public static final String GET_BASEMENT_SENSOR_DATA = SERVICE_URL + "/getbasementsensordata";
 
     //settings
     public static final String DATETIME_FORMAT  = "yyyy-MM-dd HH:mm:ss Z";
