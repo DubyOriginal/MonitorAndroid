@@ -76,7 +76,7 @@ public class HomeActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             //selClass = HomeActivity.class;
         } else if (id == R.id.nav_scheme) {
-            gotoSystemActivity();
+            gotoSchemeActivity();
         } else if (id == R.id.nav_events) {
             gotoEventsActivity();
         } else if (id == R.id.nav_tools) {
@@ -92,8 +92,8 @@ public class HomeActivity extends AppCompatActivity
         return true;
     }
 
-    private void gotoSystemActivity() {
-        DLog("gotoSystemActivity");
+    private void gotoSchemeActivity() {
+        DLog("gotoSchemeActivity");
         Intent intent = new Intent(getBaseContext(), SchemeActivity.class);
         startActivity(intent);
     }
