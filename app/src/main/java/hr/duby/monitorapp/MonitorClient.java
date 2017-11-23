@@ -13,7 +13,7 @@ import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import hr.duby.monitorapp.activities.MainActivity;
+import hr.duby.monitorapp.activities.HomeActivity;
 import hr.duby.monitorapp.network.AsyncHttpClient;
 import hr.duby.monitorapp.network.AsyncHttpListener;
 
@@ -100,7 +100,7 @@ public class MonitorClient {
                 .setContentText(infoMsg);
 
         // Creates an explicit intent for an Activity in your app
-        Intent resultIntent = new Intent(context, MainActivity.class);
+        Intent resultIntent = new Intent(context, HomeActivity.class);
 
         // The stack builder object will contain an artificial back stack for thestarted Activity.
         // This ensures that navigating backward from the Activity leads out of your application to the Home screen.

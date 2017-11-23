@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_scheme_mobile"
+    android:orientation="horizontal"
+    tools:context="hr.duby.monitorapp.activities.SchemeActivity">
+
+
+    <LinearLayout
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="141dp"
+        android:layout_marginEnd="449dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="184dp"
+        android:background="#20ab8c"
+        android:orientation="vertical"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.432">
+
+        <TextView
+            android:id="@+id/tv_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID:14"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="59.63°C"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="9dp"
+        app:srcCompat="@drawable/img_measure_point"
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="189dp" />
+</android.support.constraint.ConstraintLayout>
