@@ -15,8 +15,7 @@ import android.view.MenuItem;
 import hr.duby.monitorapp.Const;
 import hr.duby.monitorapp.R;
 
-public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

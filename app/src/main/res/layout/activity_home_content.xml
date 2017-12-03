@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent"
-                                             android:background="#88d1ce"
-                                             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                                             tools:context="hr.duby.monitorapp.activities.HomeActivity"
-                                             tools:showIn="@layout/app_bar_home">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#88d1ce"
+              android:orientation="vertical"
+              android:padding="16dp"
+              app:layout_behavior="@string/appbar_scrolling_view_behavior"
+              tools:context="hr.duby.monitorapp.activities.HomeActivity"
+              tools:showIn="@layout/app_bar_home">
 
 
     <LinearLayout
         android:layout_width="291dp"
         android:layout_height="45dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tvSensorRoomTitle"
@@ -27,9 +23,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="room temp:"
-            android:textSize="24sp"
-            android:textColor="#555555"/>
+            android:text="Room temp:"
+            android:textColor="#555555"
+            android:textSize="24sp"/>
 
         <TextView
             android:id="@+id/tvSensorRoomValue"
@@ -37,20 +33,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="23.43°C"
-            android:textSize="24sp"
-            android:textColor="#333333"/>
+            android:textColor="#333333"
+            android:textSize="24sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="291dp"
         android:layout_height="45dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="112dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tvSensorCKPTitle"
@@ -59,8 +49,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="CKP temp:"
-            android:textSize="24sp"
-            android:textColor="#555555"/>
+            android:textColor="#555555"
+            android:textSize="24sp"/>
 
         <TextView
             android:id="@+id/tvSensorCKPValue"
@@ -68,20 +58,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="23.43°C"
-            android:textSize="24sp"
-            android:textColor="#333333"/>
+            android:textColor="#333333"
+            android:textSize="24sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="291dp"
         android:layout_height="45dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="176dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tvCapacityTitle"
@@ -90,8 +74,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="CAPACITY:"
-            android:textSize="24sp"
-            android:textColor="#555555"/>
+            android:textColor="#555555"
+            android:textSize="24sp"/>
 
         <TextView
             android:id="@+id/tvCapacityValue"
@@ -99,20 +83,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="75%"
-            android:textSize="24sp"
-            android:textColor="#333333"/>
+            android:textColor="#333333"
+            android:textSize="24sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="291dp"
         android:layout_height="45dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="244dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tvPowerCPKTitle"
@@ -121,8 +99,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="CKP:"
-            android:textSize="24sp"
-            android:textColor="#555555"/>
+            android:textColor="#555555"
+            android:textSize="24sp"/>
 
         <TextView
             android:id="@+id/tvPowerCKPValue"
@@ -130,20 +108,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="25kW"
-            android:textSize="24sp"
-            android:textColor="#333333"/>
+            android:textColor="#333333"
+            android:textSize="24sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="291dp"
         android:layout_height="45dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="308dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tvPowerRADTitle"
@@ -152,8 +124,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="RADIATOR:"
-            android:textSize="24sp"
-            android:textColor="#555555"/>
+            android:textColor="#555555"
+            android:textSize="24sp"/>
 
         <TextView
             android:id="@+id/tvPowerRADValue"
@@ -161,8 +133,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="15kW"
-            android:textSize="24sp"
-            android:textColor="#333333"/>
+            android:textColor="#333333"
+            android:textSize="24sp"/>
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
