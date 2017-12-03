@@ -13,14 +13,34 @@
 
 
     <LinearLayout
-        android:layout_width="291dp"
-        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvSensorRoomTitle"
+            android:id="@+id/tvValDATE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textColor="#333333"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvTitleSOBA"
             style="@android:style/Widget.TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Room temp:"
@@ -28,24 +48,25 @@
             android:textSize="24sp"/>
 
         <TextView
-            android:id="@+id/tvSensorRoomValue"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvValSOBA"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="23.43°C"
+            android:text=""
             android:textColor="#333333"
             android:textSize="24sp"/>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="291dp"
-        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvSensorCKPTitle"
+            android:id="@+id/tvTitleCKP_CORE"
             style="@android:style/Widget.TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="CKP temp:"
@@ -53,24 +74,25 @@
             android:textSize="24sp"/>
 
         <TextView
-            android:id="@+id/tvSensorCKPValue"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvValCKP_CORE"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="23.43°C"
+            android:text=""
             android:textColor="#333333"
             android:textSize="24sp"/>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="291dp"
-        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvCapacityTitle"
+            android:id="@+id/tvTitleCapacity"
             style="@android:style/Widget.TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="CAPACITY:"
@@ -78,61 +100,62 @@
             android:textSize="24sp"/>
 
         <TextView
-            android:id="@+id/tvCapacityValue"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvValCapacity"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="75%"
+            android:text=""
             android:textColor="#333333"
             android:textSize="24sp"/>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="291dp"
-        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvPowerCPKTitle"
+            android:id="@+id/tvTitleRAD_POL"
             style="@android:style/Widget.TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="CKP:"
+            android:text="RAD. POL:"
             android:textColor="#555555"
             android:textSize="24sp"/>
 
         <TextView
-            android:id="@+id/tvPowerCKPValue"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvValRAD_POL"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="25kW"
+            android:text=""
             android:textColor="#333333"
             android:textSize="24sp"/>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="291dp"
-        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvPowerRADTitle"
+            android:id="@+id/tvTitlePOW_RAD"
             style="@android:style/Widget.TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RADIATOR:"
+            android:text="POWER RAD.:"
             android:textColor="#555555"
             android:textSize="24sp"/>
 
         <TextView
-            android:id="@+id/tvPowerRADValue"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvValPOW_RAD"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="15kW"
+            android:text=""
             android:textColor="#333333"
             android:textSize="24sp"/>
     </LinearLayout>
