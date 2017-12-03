@@ -23,7 +23,7 @@ import hr.duby.monitorapp.utils.Physics;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private TextView tvValSOBA, tvValCKP_CORE, tvValCapacity, tvValPOW_RAD, tvValRAD_POL, tvValDATE;
+    private TextView tvValOUT, tvValSOBA, tvValCKP_CORE, tvValCapacity, tvValPOW_RAD, tvValRAD_POL, tvValDATE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,6 +144,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 
     private void connectXML(){
+        tvValOUT =  (TextView) findViewById(R.id.tvValOUT);
         tvValDATE = (TextView) findViewById(R.id.tvValDATE);
         tvValSOBA = (TextView) findViewById(R.id.tvValSOBA);
         tvValCKP_CORE = (TextView) findViewById(R.id.tvValCKP_CORE);
@@ -169,12 +170,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         SensorBean sBean_RAD_POL  = SensorBean.getSensorForScreenID(17, basementList);
         SensorBean sBean_RAD_POV  = SensorBean.getSensorForScreenID(18, basementList);
         SensorBean sBean_SOBA     = SensorBean.getSensorForScreenID(19, basementList);
-        SensorBean sBean_VANI     = SensorBean.getSensorForScreenID(20, basementList);
+        SensorBean sBean_OUT     = SensorBean.getSensorForScreenID(20, basementList);
 
         tvValDATE.setText((sBean_SOBA != null && sBean_SOBA.getSensorReadTS() != null) ? sBean_SOBA.getSensorReadTS() : "-");
-        tvValCKP_CORE.setText((sBean_CKP_CORE != null && sBean_CKP_CORE.getSensorValue() != null) ? sBean_CKP_CORE.getSensorValue() : "-");
-        tvValSOBA.setText((sBean_SOBA != null && sBean_SOBA.getSensorValue() != null) ? sBean_SOBA.getSensorValue() : "-");
-        tvValRAD_POL.setText((sBean_RAD_POL != null && sBean_RAD_POL.getSensorValue() != null) ? sBean_RAD_POL.getSensorValue() : "-");
+        tvValOUT.setText((sBean_OUT != null && sBean_OUT.getSensorValue() != null) ? sBean_OUT.getSensorValue() + "°C" : "-");
+        tvValCKP_CORE.setText((sBean_CKP_CORE != null && sBean_CKP_CORE.getSensorValue() != null) ? sBean_CKP_CORE.getSensorValue() + "°C" : "-");
+        tvValSOBA.setText((sBean_SOBA != null && sBean_SOBA.getSensorValue() != null) ? sBean_SOBA.getSensorValue() + "°C" : "-");
+        tvValRAD_POL.setText((sBean_RAD_POL != null && sBean_RAD_POL.getSensorValue() != null) ? sBean_RAD_POL.getSensorValue() + "°C" : "-");
 
 
         //------------------------------------------
