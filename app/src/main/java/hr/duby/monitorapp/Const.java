@@ -23,5 +23,9 @@ public class Const {
     //**********************************************************************************************
     public static final String KEY_URL_LINK    = "KEY_URL_LINK";
 
+    //ACTIONS
+    //**********************************************************************************************
+    public static final String ACTION_CRITICAL_TEMP = "CRITICAL_TEMP";
+
 
 }

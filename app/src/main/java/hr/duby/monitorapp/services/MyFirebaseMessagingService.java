@@ -10,9 +10,11 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import hr.duby.monitorapp.Const;
 import hr.duby.monitorapp.R;
 
 /**
@@ -24,6 +26,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
         DLog("!!! PUSH MESSAGE RECEIVED !!!!");
+        DLog("remoteMessage.getData() -> " + remoteMessage.getData());
 
         String msgTitle = null;
         String msgBody = null;
@@ -31,9 +34,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         try {
             msgTitle = remoteMessage.getNotification().getTitle();
             msgBody = remoteMessage.getNotification().getBody();
-            msgData = new JSONObject(remoteMessage.getData().get("msgData"));
-        } catch (JSONException e) {
-            DLog("onMessageReceived: JSONException");
+            msgData = new JSONObject(remoteMessage.getData());  //data: {"action":"CRITICAL_TEMP"}
+
         } catch (Exception e) {
             e.printStackTrace();
             DLog("onMessageReceived: General Exception");
@@ -51,6 +53,18 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     //**********************************************************************************************
     private void handlePushNotification(String title, String body, JSONObject msgData) {
+        String action = null;
+        try {
+            action = msgData.getString("action");
+        } catch (JSONException e) {
+            DLog("handlePushNotification: parse json object exception");
+        }
+        if (action != null){
+            if (action.contentEquals(Const.ACTION_CRITICAL_TEMP)){
+                DLog("ACTION_CRITICAL_TEMP");
+                //on notification click go to "CRITICAL TEMP VIEW" request REST and show critical sensors! todo
+            }
+        }
 
     }
 
