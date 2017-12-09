@@ -1,16 +1,20 @@
 package hr.duby.monitorapp.activities;
 
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
@@ -30,6 +34,7 @@ public class WebBrowserActivity extends AppCompatActivity {
     private WebView webView;
     String urlLink = "";
     private int loadCnt = 0;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +61,23 @@ public class WebBrowserActivity extends AppCompatActivity {
         webView = (WebView) findViewById(R.id.wvBrowser);
         webView.getSettings().setJavaScriptEnabled(true);
 
+        progressBar = (ProgressBar) findViewById(R.id.progressBar_wb);
         webView.setWebViewClient(new WebViewClient() {
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+                Log.d("DTag", "onPageStarted: url -> " + url);
+                //progressDialog.show();
+                progressBar.setVisibility(View.VISIBLE);
+            }
 
             public void onPageFinished(WebView view, String url) {
                 Log.d("DTag", "onPageFinished[" + loadCnt + "] url -> " + url);
+                progressBar.setVisibility(View.GONE);
+                //if (progressDialog.isShowing()) {
+                //    progressDialog.dismiss();
+                //}
             }
 
             @Override

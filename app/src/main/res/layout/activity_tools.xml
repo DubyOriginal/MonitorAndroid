@@ -1,37 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent"
-                                             android:background="#ececec"
-                                             tools:context="hr.duby.monitorapp.activities.ToolsActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ececec"
+    android:orientation="vertical"
+    tools:context="hr.duby.monitorapp.activities.ToolsActivity">
 
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="161dp"
         android:layout_height="26dp"
-        android:layout_marginEnd="224dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="SELECT DNS"
         android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:textStyle="bold" />
 
     <RadioGroup
         android:layout_width="373dp"
         android:layout_height="92dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
         <RadioButton
             android:id="@+id/rbLocal"
@@ -39,28 +32,23 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:checked="true"
-            android:text="192.168.1.24"/>
+            android:text="192.168.1.24" />
 
         <RadioButton
             android:id="@+id/rbDDNS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="http://duby.ddns.net"/>
+            android:text="http://duby.ddns.net" />
     </RadioGroup>
 
     <LinearLayout
-        android:layout_width="364dp"
-        android:layout_height="470dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="176dp"
         android:background="#ff9494"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView3"
@@ -68,7 +56,7 @@
             android:layout_height="50dp"
             android:text="SSH"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <EditText
             android:layout_width="match_parent"
@@ -76,39 +64,24 @@
             android:ems="10"
             android:hint="enter ssh comand to execute"
             android:inputType="textPersonName"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:text="CLEAR"/>
+            android:text="CLEAR" />
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EXECUTE SSH COMMAND"/>
+            android:text="EXECUTE SSH COMMAND" />
 
     </LinearLayout>
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp"/>
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp"/>
-
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
