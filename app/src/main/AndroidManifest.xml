@@ -19,6 +19,7 @@
         <activity
             android:name=".activities.HomeActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_main2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

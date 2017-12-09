@@ -1,51 +1,481 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/img_scheme_mobile"
-    android:orientation="horizontal"
-    tools:context="hr.duby.monitorapp.activities.SchemeActivity">
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:id="@+id/relativeLayout"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:background="@drawable/img_scheme_mobile_with_mp"
+                                             tools:context="hr.duby.monitorapp.activities.SchemeActivity">
 
-
+    <!-- MEASUREMENT BOXES -->
+    <!-- **************************************************** -->
     <LinearLayout
-        android:layout_width="35dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="141dp"
-        android:layout_marginEnd="449dp"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="184dp"
-        android:background="#20ab8c"
+        android:id="@+id/llSensSID10"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_border_box"
+        android:gravity="center"
         android:orientation="vertical"
-        android:padding="3dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintHorizontal_bias="0.663"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432">
+        app:layout_constraintVertical_bias="0.405">
 
         <TextView
-            android:id="@+id/tv_"
-            android:layout_width="match_parent"
+            android:id="@+id/tvSensID_10"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:text="ID:14"
-            android:textSize="8sp" />
+            android:text="ID:99"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvSensVal_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="59.63°C"
-            android:textSize="8sp" />
+            android:text="99.99°C"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="9dp"
-        app:srcCompat="@drawable/img_measure_point"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="189dp" />
+    <LinearLayout
+        android:id="@+id/llSensSID11"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_border_box"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.663"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.534">
+
+        <TextView
+            android:id="@+id/tvSensID_11"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ID:99"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvSensVal_11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99.99°C"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSensSID12"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_border_box"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.663"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.664">
+
+        <TextView
+            android:id="@+id/tvSensID_12"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ID:99"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvSensVal_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99.99°C"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSensSID13"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_border_box"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.663"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.782">
+
+        <TextView
+            android:id="@+id/tvSensID_13"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ID:99"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvSensVal_13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99.99°C"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSensSID14"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_border_box"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.558">
+
+        <TextView
+            android:id="@+id/tvSensID_14"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ID:99"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvSensVal_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99.99°C"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSensSID15"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_border_box"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.907">
+
+        <TextView
+            android:id="@+id/tvSensID_15"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ID:99"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvSensVal_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99.99°C"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSensSID16"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_border_box"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.457">
+
+        <TextView
+            android:id="@+id/tvSensID_16"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ID:99"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvSensVal_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99.99°C"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSensSID17"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_border_box"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422">
+
+        <TextView
+            android:id="@+id/tvSensID_17"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ID:99"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvSensVal_17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99.99°C"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSensSID18"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_border_box"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.889"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.871">
+
+        <TextView
+            android:id="@+id/tvSensID_18"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ID:99"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvSensVal_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99.99°C"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSensSID19"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_border_box"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.256">
+
+        <TextView
+            android:id="@+id/tvSensID_19"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ID:99"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvSensVal_19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99.99°C"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSensSID20"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_border_box"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.152">
+
+        <TextView
+            android:id="@+id/tvSensID_20"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="ID:99"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvSensVal_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99.99°C"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+
+    <!-- POWER BOXES -->
+    <!-- **************************************************** -->
+    <LinearLayout
+        android:id="@+id/llPowerCPK"
+        android:layout_width="57dp"
+        android:layout_height="27dp"
+        android:background="@drawable/shape_border_box_orange"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.736">
+
+        <TextView
+            android:id="@+id/tvPowerCPKTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="POWER - CKP"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvPowerCKPValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="99kW"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llPowerRAD"
+        android:layout_width="57dp"
+        android:layout_height="27dp"
+        android:background="@drawable/shape_border_box_orange"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.521">
+
+        <TextView
+            android:id="@+id/tvPowerRADTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="POWER - RAD"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvPowerRADValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="99kW"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+    <!-- PUFFER CAPACITY -->
+    <!-- **************************************************** -->
+    <LinearLayout
+        android:id="@+id/llPuffCapacity"
+        android:layout_width="57dp"
+        android:layout_height="27dp"
+        android:background="@drawable/shape_border_box_orange"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.755">
+
+        <TextView
+            android:id="@+id/tvPuffCapacityTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CAPACITY"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+
+        <TextView
+            android:id="@+id/tvPuffCapacityValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="99%"
+            android:textAlignment="center"
+            android:textSize="8sp"/>
+    </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>
