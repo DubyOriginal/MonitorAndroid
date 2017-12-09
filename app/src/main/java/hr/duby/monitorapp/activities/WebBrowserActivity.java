@@ -46,57 +46,61 @@ public class WebBrowserActivity extends AppCompatActivity {
             //urlLink = "http://duby.ddns.net:2200/";
 
             if (urlLink != null && urlLink.length() > 0) {
-                webView = (WebView) findViewById(R.id.wvBrowser);
-                webView.getSettings().setJavaScriptEnabled(true);
-
-                webView.setWebViewClient(new WebViewClient() {
-
-                    public void onPageFinished(WebView view, String url) {
-                        Log.d("DTag", "onPageFinished[" + loadCnt + "] url -> " + url);
-                    }
-
-                    @Override
-                    public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {
-                        Log.d("DTag", "init -> onReceivedHttpError -> " + errorResponse);
-                        super.onReceivedHttpError(view, request, errorResponse);
-                    }
-
-                    @Override
-                    public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                        Log.d("DTag", "init -> onReceivedError -> " + error);
-                        super.onReceivedError(view, request, error);
-                    }
-
-                    @Override
-                    public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-                        //super.onReceivedSslError(view, handler, error);
-
-                        String message = "SSL Certificate error.";
-                        switch (error.getPrimaryError()) {
-                            case SslError.SSL_UNTRUSTED:
-                                message = "The certificate authority is not trusted.";
-                                break;
-                            case SslError.SSL_EXPIRED:
-                                message = "The certificate has expired.";
-                                break;
-                            case SslError.SSL_IDMISMATCH:
-                                message = "The certificate Hostname mismatch.";
-                                break;
-                            case SslError.SSL_NOTYETVALID:
-                                message = "The certificate is not yet valid.";
-                                break;
-                        }
-                        message += "\"SSL Certificate Error\" Do you want to continue anyway?.. YES";
-
-                        handler.proceed();
-                    }
-
-                });//webView.setWebViewClient
-
-                webView.loadUrl(urlLink);
+                prepareAndInitWebView();
             }
         }
 
+    }
+
+    private void prepareAndInitWebView() {
+        webView = (WebView) findViewById(R.id.wvBrowser);
+        webView.getSettings().setJavaScriptEnabled(true);
+
+        webView.setWebViewClient(new WebViewClient() {
+
+            public void onPageFinished(WebView view, String url) {
+                Log.d("DTag", "onPageFinished[" + loadCnt + "] url -> " + url);
+            }
+
+            @Override
+            public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {
+                Log.d("DTag", "init -> onReceivedHttpError -> " + errorResponse);
+                super.onReceivedHttpError(view, request, errorResponse);
+            }
+
+            @Override
+            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+                Log.d("DTag", "init -> onReceivedError -> " + error);
+                super.onReceivedError(view, request, error);
+            }
+
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                //super.onReceivedSslError(view, handler, error);
+
+                String message = "SSL Certificate error.";
+                switch (error.getPrimaryError()) {
+                    case SslError.SSL_UNTRUSTED:
+                        message = "The certificate authority is not trusted.";
+                        break;
+                    case SslError.SSL_EXPIRED:
+                        message = "The certificate has expired.";
+                        break;
+                    case SslError.SSL_IDMISMATCH:
+                        message = "The certificate Hostname mismatch.";
+                        break;
+                    case SslError.SSL_NOTYETVALID:
+                        message = "The certificate is not yet valid.";
+                        break;
+                }
+                message += "\"SSL Certificate Error\" Do you want to continue anyway?.. YES";
+
+                handler.proceed();
+            }
+
+        });//webView.setWebViewClient
+
+        webView.loadUrl(urlLink);
     }
 
 
