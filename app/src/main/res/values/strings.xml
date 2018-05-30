@@ -6,4 +6,13 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- LIST OF COMMANDS -->
+    <string-array name="command_list">
+        <item>/system/bin/ps</item>
+        <item>date +%s</item>
+        <item>ls -al</item>
+        <item>ssh duby@93.142.58.38</item>
+        <item>NODE_ENV=LIVE pm2 start MonitorApp.js --log-date-format 'YYYY-MM-DD HH:mm:ss' -i 2</item>
+    </string-array>
 </resources>

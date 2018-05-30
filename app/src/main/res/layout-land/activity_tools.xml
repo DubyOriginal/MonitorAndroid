@@ -21,7 +21,10 @@
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/rbLocal"
@@ -29,8 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:checked="true"
-            android:text="192.168.1.24"
-            android:focusable="true"/>
+            android:text="192.168.1.24"/>
 
         <RadioButton
             android:id="@+id/rbDDNS"
@@ -46,31 +48,45 @@
         android:background="#ff9494"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/etInputCommand"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="enter ssh comand to execute"
-            android:textSize="12sp"/>
+            android:orientation="horizontal"
+            android:layout_marginBottom="7dp">
 
-        <Button
-            android:id="@+id/btnClearCmd"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:text="CLEAR"/>
+            <EditText
+                android:id="@+id/etInputCommand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="enter ssh comand to execute"
+                android:textSize="12sp"/>
 
-        <Spinner
-            android:id="@+id/spinnerCmds"
+            <Button
+                android:id="@+id/btnClearCmd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CLEAR"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"/>
+            android:orientation="horizontal"
+            android:layout_marginBottom="7dp">
 
-        <Button
-            android:id="@+id/btnExecuteCmd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="EXECUTE SSH COMMAND"
-            android:layout_marginBottom="10dp"/>
+            <Spinner
+                android:id="@+id/spinnerCmds"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btnExecuteCmd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EXECUTE SSH COMMAND"/>
+        </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
