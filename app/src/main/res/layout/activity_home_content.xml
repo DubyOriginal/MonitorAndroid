@@ -4,13 +4,26 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="#88d1ce"
+              android:background="#dedede"
               android:orientation="vertical"
               android:padding="16dp"
               app:layout_behavior="@string/appbar_scrolling_view_behavior"
               tools:context="hr.duby.monitorapp.activities.HomeActivity"
               tools:showIn="@layout/app_bar_home">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_scheme_small"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -94,6 +94,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_home) {
             //selClass = HomeActivity.class;
+        } else if (id == R.id.nav_status) {
+            gotoStatusActivity();
         } else if (id == R.id.nav_scheme) {
             gotoSchemeActivity();
         } else if (id == R.id.nav_events) {
@@ -109,6 +111,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void gotoStatusActivity() {
+        DLog("gotoStatusActivity");
+        Intent intent = new Intent(getBaseContext(), StatusActivity.class);
+        startActivity(intent);
     }
 
     private void gotoSchemeActivity() {

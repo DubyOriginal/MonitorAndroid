@@ -1,7 +1,9 @@
 package hr.duby.monitorapp.services;
 
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
@@ -28,12 +30,23 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         DLog("!!! PUSH MESSAGE RECEIVED !!!!");
         DLog("remoteMessage.getData() -> " + remoteMessage.getData());
 
+        /*
+        notification: {
+        title: "TITLE OF NOTIFICATION",
+        body: "NOTIFICATION MESSAGE",
+        sound: "default",
+        click_action: "com.example.myapplication_YOUR_NOTIFICATION_NAME"}
+        */
+
         String msgTitle = null;
         String msgBody = null;
+        String msgClickAction = null;
         JSONObject msgData = null;
         try {
             msgTitle = remoteMessage.getNotification().getTitle();
             msgBody = remoteMessage.getNotification().getBody();
+            msgClickAction = remoteMessage.getNotification().getClickAction();
+            msgClickAction = "hr.duby.monitorapp.notification_click_action";    //@@@.T
             msgData = new JSONObject(remoteMessage.getData());  //data: {"action":"CRITICAL_TEMP"}
 
         } catch (Exception e) {
@@ -43,7 +56,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         DLog("PUSH MSG CONTENT: \n\tmsgTitle: " + msgTitle + "\n\tmsgBody: " + msgBody + "\n\tmsgData: " + msgData);
 
-        buildPushNotification(getBaseContext(), R.drawable.new_chat_msg, msgTitle, msgBody, false);
+        buildPushNotification(getBaseContext(), R.drawable.new_chat_msg, msgTitle, msgBody, msgClickAction);
 
         handlePushNotification(msgTitle, msgBody, msgData);
         //String encoded = remoteMessage.getData().get("key_2");
@@ -68,22 +81,23 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     }
 
-    public void buildPushNotification(Context context, int icon, String msgTitle, CharSequence msgBody, boolean silent) {
-
-        //Define Notification Manager
-        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+    public void buildPushNotification(Context context, int icon, String msgTitle, CharSequence msgBody, String msgClickAction) {
 
         //Define sound URI
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext())
-                .setSmallIcon(icon)
-                .setContentTitle(msgTitle)
-                .setContentText(msgBody)
-                .setSound(soundUri); //This sets the sound to play
-
-        //Display notification
-        notificationManager.notify(0, mBuilder.build());
+        Intent intent=new Intent(msgClickAction);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent pendingIntent=PendingIntent.getActivity(this,0,intent, PendingIntent.FLAG_ONE_SHOT);
+        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(this);
+        notificationBuilder.setContentTitle(msgTitle);
+        notificationBuilder.setContentText(msgBody);
+        notificationBuilder.setSmallIcon(icon);
+        notificationBuilder.setSound(soundUri);
+        notificationBuilder.setAutoCancel(true);
+        notificationBuilder.setContentIntent(pendingIntent);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0,notificationBuilder.build());
 
         /*
         try {

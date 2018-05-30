@@ -15,20 +15,19 @@ public class SensorBean {
     private String sensorMID;
     private String sensorName;
     private String sensorValue;
+    private String alarmMin;
+    private String alarmMax;
 
     //constructor
     //**********************************************************************************************
     public SensorBean() {
     }
 
-    public SensorBean(String sensorID, String sensorReadTS, int screenID, String sensorType, String sensorMID, String sensorName, String sensorValue) {
-        this.sensorID = sensorID;
-        this.sensorReadTS = sensorReadTS;
-        this.screenID = screenID;
-        this.sensorType = sensorType;
-        this.sensorMID = sensorMID;
+    public SensorBean(String sensorName, String sensorValue, String alarmMin, String alarmMax) {
         this.sensorName = sensorName;
         this.sensorValue = sensorValue;
+        this.alarmMin = alarmMin;
+        this.alarmMax = alarmMax;
     }
 
     //getter && setters
@@ -89,6 +88,21 @@ public class SensorBean {
         this.sensorValue = sensorValue;
     }
 
+    public String getAlarmMin() {
+        return alarmMin;
+    }
+
+    public void setAlarmMin(String alarmMin) {
+        this.alarmMin = alarmMin;
+    }
+
+    public String getAlarmMax() {
+        return alarmMax;
+    }
+
+    public void setAlarmMax(String alarmMax) {
+        this.alarmMax = alarmMax;
+    }
 
     //**********************************************************************************************
     public static SensorBean getSensorForScreenID(int screenID, List<SensorBean> sensorBeanList){

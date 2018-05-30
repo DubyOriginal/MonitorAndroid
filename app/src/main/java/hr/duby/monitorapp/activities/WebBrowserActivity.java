@@ -1,16 +1,20 @@
 package hr.duby.monitorapp.activities;
 
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
@@ -30,6 +34,7 @@ public class WebBrowserActivity extends AppCompatActivity {
     private WebView webView;
     String urlLink = "";
     private int loadCnt = 0;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,57 +51,74 @@ public class WebBrowserActivity extends AppCompatActivity {
             //urlLink = "http://duby.ddns.net:2200/";
 
             if (urlLink != null && urlLink.length() > 0) {
-                webView = (WebView) findViewById(R.id.wvBrowser);
-                webView.getSettings().setJavaScriptEnabled(true);
-
-                webView.setWebViewClient(new WebViewClient() {
-
-                    public void onPageFinished(WebView view, String url) {
-                        Log.d("DTag", "onPageFinished[" + loadCnt + "] url -> " + url);
-                    }
-
-                    @Override
-                    public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {
-                        Log.d("DTag", "init -> onReceivedHttpError -> " + errorResponse);
-                        super.onReceivedHttpError(view, request, errorResponse);
-                    }
-
-                    @Override
-                    public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                        Log.d("DTag", "init -> onReceivedError -> " + error);
-                        super.onReceivedError(view, request, error);
-                    }
-
-                    @Override
-                    public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-                        //super.onReceivedSslError(view, handler, error);
-
-                        String message = "SSL Certificate error.";
-                        switch (error.getPrimaryError()) {
-                            case SslError.SSL_UNTRUSTED:
-                                message = "The certificate authority is not trusted.";
-                                break;
-                            case SslError.SSL_EXPIRED:
-                                message = "The certificate has expired.";
-                                break;
-                            case SslError.SSL_IDMISMATCH:
-                                message = "The certificate Hostname mismatch.";
-                                break;
-                            case SslError.SSL_NOTYETVALID:
-                                message = "The certificate is not yet valid.";
-                                break;
-                        }
-                        message += "\"SSL Certificate Error\" Do you want to continue anyway?.. YES";
-
-                        handler.proceed();
-                    }
-
-                });//webView.setWebViewClient
-
-                webView.loadUrl(urlLink);
+                prepareAndInitWebView();
             }
         }
 
+    }
+
+    private void prepareAndInitWebView() {
+        webView = (WebView) findViewById(R.id.wvBrowser);
+        webView.getSettings().setJavaScriptEnabled(true);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar_wb);
+        webView.setWebViewClient(new WebViewClient() {
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+                Log.d("DTag", "onPageStarted: url -> " + url);
+                //progressDialog.show();
+                progressBar.setVisibility(View.VISIBLE);
+            }
+
+            public void onPageFinished(WebView view, String url) {
+                Log.d("DTag", "onPageFinished[" + loadCnt + "] url -> " + url);
+                progressBar.setVisibility(View.GONE);
+                //if (progressDialog.isShowing()) {
+                //    progressDialog.dismiss();
+                //}
+            }
+
+            @Override
+            public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {
+                Log.d("DTag", "init -> onReceivedHttpError -> " + errorResponse);
+                super.onReceivedHttpError(view, request, errorResponse);
+            }
+
+            @Override
+            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+                Log.d("DTag", "init -> onReceivedError -> " + error);
+                super.onReceivedError(view, request, error);
+            }
+
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                //super.onReceivedSslError(view, handler, error);
+
+                String message = "SSL Certificate error.";
+                switch (error.getPrimaryError()) {
+                    case SslError.SSL_UNTRUSTED:
+                        message = "The certificate authority is not trusted.";
+                        break;
+                    case SslError.SSL_EXPIRED:
+                        message = "The certificate has expired.";
+                        break;
+                    case SslError.SSL_IDMISMATCH:
+                        message = "The certificate Hostname mismatch.";
+                        break;
+                    case SslError.SSL_NOTYETVALID:
+                        message = "The certificate is not yet valid.";
+                        break;
+                }
+                message += "\"SSL Certificate Error\" Do you want to continue anyway?.. YES";
+
+                handler.proceed();
+            }
+
+        });//webView.setWebViewClient
+
+        webView.loadUrl(urlLink);
     }
 
 

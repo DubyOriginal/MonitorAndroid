@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <ProgressBar
+            android:id="@+id/pbSensorStatus"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:progress="50"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="15dp">
+
+            <TextView
+                android:id="@+id/tvSensorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CKP_CORE"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tvSensorValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="50.04˙C"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAlarmMin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MIN: 10˙C"
+                android:textSize="11sp"
+                android:textStyle="italic"
+                android:textColor="#666"/>
+
+            <TextView
+                android:id="@+id/tvAlarmMax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MAX: 90˙C"
+                android:textSize="11sp"
+                android:textStyle="italic"
+                android:textColor="#666"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
