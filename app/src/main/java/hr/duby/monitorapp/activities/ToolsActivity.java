@@ -99,7 +99,11 @@ public class ToolsActivity extends AppCompatActivity implements View.OnClickList
 
     private void executeAndShowResult(String command){
         //String executionResult = executeCommand(command);
-        runOnMainThreadExecuteCommand("duby", "duby@238", "93.142.58.38", 22);
+        String dUsername = "duby";
+        String dPassword = "duby@238";
+        String dHostname = "93.142.58.38";
+        int dPort = 22;
+        runOnMainThreadExecuteCommand(dUsername, dPassword, dHostname, dPort);
         //String executionResult = getThreadResult();
         String executionResult = "";
 
